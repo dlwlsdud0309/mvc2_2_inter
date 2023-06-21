@@ -24,14 +24,18 @@ public class MyDispatcher extends HttpServlet{
 		System.out.println("com : "+com);
 //		System.out.println(conPath.length());
 		
-		NbDetailController controller1 = new NbDetailController();
-		NbEditController controller2 = new NbEditController();
+//		NbDetailController controller1 = new NbDetailController();
+//		NbEditController controller2 = new NbEditController();
+		NbController nbController = null;
+		
 		
 		try {
 			if(com.equals("/dbConnectTest5_notices/noticeboardsDetail.do")) {
-				controller1.execute(request, response);
+//				controller1.execute(request, response);
+				nbController = new NbDetailController();
 			}else if(com.equals("/dbConnectTest5_notices/noticeboardsEdit.do")) {
-				controller2.execute(request, response);
+//				controller2.execute(request, response);
+				nbController = new NbEditController();
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
