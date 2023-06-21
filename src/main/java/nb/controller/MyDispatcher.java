@@ -37,6 +37,7 @@ public class MyDispatcher extends HttpServlet{
 //				controller2.execute(request, response);
 				nbController = new NbEditController();
 			}
+			nbController.execute(request, response);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
