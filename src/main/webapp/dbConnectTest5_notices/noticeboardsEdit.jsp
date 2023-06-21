@@ -52,7 +52,7 @@ rs.next(); */
 <body>
 <h3>noticeboardsEdit.jsp</h3>
 
-<form action="noticeboardsEditProc.jsp" method="post">
+<form action="noticeboardsEditProc.do" method="post">
 	<table class="twidth">
 		<colgroup>
 			<col width="15%"/>
