@@ -30,9 +30,16 @@ public class NbEditProcController implements NbController{
 		NoticeBoardsDao dao = new NoticeBoardsDao();
 		int cnt = dao.edit(nb);
 		
-		if(cnt>0){
-			//System.out.println("cnt : "+cnt); //결과값 1
-			response.sendRedirect("noticeboardsDetail.jsp?no="+num);
-		}
+//		if(cnt>0){
+//			//System.out.println("cnt : "+cnt); //결과값 1
+//			response.sendRedirect("noticeboardsDetail.jsp?no="+num);
+//		}
+		
+		
+		//detail로 이동하도록 처리
+		nb = dao.getNBD(num);
+		
+		request.setAttribute("nb", nb);
+		request.getRequestDispatcher("noticeboardsDetail.jsp").forward(request, response);
 	}
 }
