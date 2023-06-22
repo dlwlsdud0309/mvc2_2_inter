@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import nb.controller.dbConnectTest5.NbDetailController;
 import nb.controller.dbConnectTest5.NbEditController;
+import nb.controller.dbConnectTest5.NbEditProcController;
 
 public class MyDispatcher extends HttpServlet{
 	@Override
@@ -36,6 +37,9 @@ public class MyDispatcher extends HttpServlet{
 			}else if(com.equals("/dbConnectTest5_notices/noticeboardsEdit.do")) {
 //				controller2.execute(request, response);
 				nbController = new NbEditController();
+			}else if(com.equals("/dbConnectTest5_notices/noticeboardsEditProc.do")) {
+//				controller2.execute(request, response);
+				nbController = new NbEditProcController();
 			}
 			nbController.execute(request, response);
 		} catch (Exception e) {

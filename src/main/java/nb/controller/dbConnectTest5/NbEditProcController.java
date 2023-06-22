@@ -9,7 +9,7 @@ import nb.vo.NoticeBoards;
 public class NbEditProcController implements NbController{
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		System.out.println("NbEditProcController mvc2 신호");
-
+		
 		String num = request.getParameter("no");
 
 		if(num==null){
@@ -23,18 +23,16 @@ public class NbEditProcController implements NbController{
 		String content = request.getParameter("content");
 
 		NoticeBoards nb = new NoticeBoards();
-		nb.setSeq(Integer.parseInt(num));
 		nb.setTitle(title);
 		nb.setContent(content);
+		nb.setSeq(Integer.parseInt(num));
 
 		NoticeBoardsDao dao = new NoticeBoardsDao();
 		int cnt = dao.edit(nb);
 		
-		//detail로 이동하도록 처리
-		nb = dao.getNBD(num);
-		
-		//request에 NoticeBoards nb를 담기
-		request.setAttribute("nb", nb);
-		request.getRequestDispatcher("noticeboardsDetail.jsp").forward(request, response);
+		if(cnt>0){
+			//System.out.println("cnt : "+cnt); //결과값 1
+			response.sendRedirect("noticeboardsDetail.jsp?no="+num);
+		}
 	}
 }

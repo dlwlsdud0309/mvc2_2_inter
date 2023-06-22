@@ -53,10 +53,10 @@ pstmt.setInt(3, Integer.parseInt(num));
 //rs.next();
 
 int cnt = pstmt.executeUpdate(); */
-if(cnt>0){
+/* if(cnt>0){
 	//System.out.println("cnt : "+cnt); //결과값 1
 	response.sendRedirect("noticeboardsDetail.jsp?no="+num);
-}
+} */
 
 %>
 <!DOCTYPE html>
