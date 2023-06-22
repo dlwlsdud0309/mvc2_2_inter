@@ -10,7 +10,7 @@
 request.setCharacterEncoding("utf-8");
 %>
 <%
-String num = request.getParameter("no");
+/* String num = request.getParameter("no");
 
 if(num==null){
 	System.out.println("null");
@@ -28,7 +28,7 @@ nb.setContent(content);
 nb.setSeq(Integer.parseInt(num));
 
 NoticeBoardsDao dao = new NoticeBoardsDao();
-int cnt = dao.edit(nb);
+int cnt = dao.edit(nb); */
 
 /* String driver = "oracle.jdbc.driver.OracleDriver";
 String url = "jdbc:oracle:thin:@localhost:1521:xe";

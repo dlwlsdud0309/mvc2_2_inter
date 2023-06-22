@@ -10,5 +10,31 @@ public class NbEditProcController implements NbController{
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		System.out.println("NbEditProcController mvc2 신호");
 
+		String num = request.getParameter("no");
+
+		if(num==null){
+			System.out.println("null");
+			response.sendRedirect("noticeboards.jsp");
+			return;
+			//참조사이트 : https://findmypiece.tistory.com/55
+		}
+
+		String title = request.getParameter("title");
+		String content = request.getParameter("content");
+
+		NoticeBoards nb = new NoticeBoards();
+		nb.setSeq(Integer.parseInt(num));
+		nb.setTitle(title);
+		nb.setContent(content);
+
+		NoticeBoardsDao dao = new NoticeBoardsDao();
+		int cnt = dao.edit(nb);
+		
+		//detail로 이동하도록 처리
+		nb = dao.getNBD(num);
+		
+		//request에 NoticeBoards nb를 담기
+		request.setAttribute("nb", nb);
+		request.getRequestDispatcher("noticeboardsDetail.jsp").forward(request, response);
 	}
 }

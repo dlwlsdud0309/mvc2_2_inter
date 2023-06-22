@@ -12,6 +12,9 @@ public class NbEditController implements NbController{
 		
 		String num = request.getParameter("no");
 
+		NoticeBoardsDao dao = new NoticeBoardsDao();
+		NoticeBoards nb = dao.getNBD(num);
+
 		if(num==null){
 			System.out.println("null");
 			response.sendRedirect("noticeboards.jsp");
@@ -19,8 +22,6 @@ public class NbEditController implements NbController{
 			//참조사이트 : https://findmypiece.tistory.com/55
 		}
 
-		NoticeBoardsDao dao = new NoticeBoardsDao();
-		NoticeBoards nb = dao.getNBD(num);
 		
 		request.setAttribute("nb", nb);
 		
