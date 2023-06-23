@@ -11,7 +11,7 @@ request.setCharacterEncoding("utf-8");
 </head>
 <body>
 <h3>nbInsertReg.jsp</h3>
-<form action="nbInsertPro.jsp" method="post">
+<form action="nbInsertPro.do" method="post">
 	<dl>
 		<dt>제목</dt>
 		<dt>
