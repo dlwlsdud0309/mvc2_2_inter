@@ -16,7 +16,7 @@ request.setCharacterEncoding("utf-8");
 </head>
 <body>
 <%
-String title = request.getParameter("title");
+/* String title = request.getParameter("title");
 String loginId = (String)session.getAttribute("sessionId");
 String content = request.getParameter("content");
 
@@ -26,7 +26,7 @@ nb.setWriter(loginId);
 nb.setContent(content);
 
 NoticeBoardsDao dao = new NoticeBoardsDao();
-int resultNum = dao.insert(nb);
+int resultNum = dao.insert(nb); */
 
 /* //db연결하여 insert
 Connection conn = null;
@@ -52,9 +52,9 @@ pstmt.setString(3, content);
 int resultNum = pstmt.executeUpdate();
 System.out.println("resultNum : "+resultNum); */
 
-if(resultNum>0){
+/* if(resultNum>0){
 	response.sendRedirect("noticeboards.jsp");
-}
+} */
 %>
 
 </body>

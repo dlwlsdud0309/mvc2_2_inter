@@ -84,7 +84,7 @@ if(session.getAttribute("sessionId")==null){
 <%
 if(session.getAttribute("sessionId")!=null){
 %>
-	<a href="nbInsertReg.jsp">글쓰기</a>
+	<a href="nbInsertReg.do">글쓰기</a>
 <%
 }else {
 %>
