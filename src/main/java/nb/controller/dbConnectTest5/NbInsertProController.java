@@ -9,16 +9,16 @@ import nb.vo.NoticeBoards;
 
 public class NbInsertProController implements NbController{
 
-	HttpSession session;
+	//HttpSession session;
 	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		System.out.println("NbInsertProController mvc2 신호");
 		
 		String title = request.getParameter("title");
-		String loginId = (String)session.getAttribute("sessionId");
-		System.out.println("InsertPro title : "+title);
-		System.out.println("InsertPro loginId : "+loginId);
+		String loginId = (String)request.getRequestedSessionId();
+		//System.out.println("InsertPro title : "+title);
+		//System.out.println("InsertPro loginId : "+loginId);
 		String content = request.getParameter("content");
 
 		NoticeBoards nb = new NoticeBoards();
