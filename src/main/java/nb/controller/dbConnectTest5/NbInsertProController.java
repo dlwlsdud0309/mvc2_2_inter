@@ -47,6 +47,7 @@ public class NbInsertProController implements NbController{
 		//request.setAttribute("nb", nb);
 		
 		if(resultNum>0){
+			//둘 다 사용가능
 			request.getRequestDispatcher("noticeboards.jsp").forward(request, response);
 			//response.sendRedirect("noticeboards.jsp");
 		}
