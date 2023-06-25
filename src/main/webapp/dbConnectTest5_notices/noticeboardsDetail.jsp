@@ -105,7 +105,7 @@ if(session.getAttribute("sessionId")!=null){ //로그인 되어있을 경우
 	//session.setAttribute("sendInsertProWriterId", sendInsertProWriterId);
 %>
 	<a href="noticeboardsEdit.do?no=${nb.seq}">수정</a>
-	<a href="noticeboardsDelProc.jsp?no=${nb.seq}">삭제</a>
+	<a href="noticeboardsDelProc.do?no=${nb.seq}">삭제</a>
 <%
 	}
 }else if(session.getAttribute("sessionId")==null){ //로그인 되어있지 않은 경우

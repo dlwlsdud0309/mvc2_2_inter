@@ -6,6 +6,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import nb.controller.dbConnectTest5.NbDelProcController;
 import nb.controller.dbConnectTest5.NbDetailController;
 import nb.controller.dbConnectTest5.NbEditController;
 import nb.controller.dbConnectTest5.NbEditProcController;
@@ -46,6 +47,8 @@ public class MyDispatcher extends HttpServlet{
 				nbController = new NbInsertRegController();
 			}else if(com.equals("/dbConnectTest5_notices/nbInsertPro.do")) {
 				nbController = new NbInsertProController();
+			}else if(com.equals("/dbConnectTest5_notices/noticeboardsDelProc.do")) {
+				nbController = new NbDelProcController();
 			}
 			nbController.execute(request, response);
 		} catch (Exception e) {

@@ -10,7 +10,7 @@ request.setCharacterEncoding("utf-8");
 %>
 
 <%
-String num = request.getParameter("no");
+/* String num = request.getParameter("no");
 
 if(num==null){
 	response.sendRedirect("noticeboards.jsp");
@@ -21,7 +21,7 @@ NoticeBoards nb = new NoticeBoards();
 nb.setSeq(Integer.parseInt(num));
 
 NoticeBoardsDao dao = new NoticeBoardsDao();
-int cnt = dao.delete(nb);
+int cnt = dao.delete(nb); */
 
 /* String driver = "oracle.jdbc.driver.OracleDriver";
 String url = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -39,9 +39,9 @@ pstmt.setInt(1, Integer.parseInt(num));
 
 int cnt = pstmt.executeUpdate(); */
 
-if(cnt>0){
+/* if(cnt>0){
 	response.sendRedirect("noticeboards.jsp");
-}
+} */
 %>
 <!DOCTYPE html>
 <html>

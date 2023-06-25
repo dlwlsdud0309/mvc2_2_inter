@@ -54,7 +54,7 @@ if(session.getAttribute("sessionId")==null){
 }
 %>
 
-<table border="1" width="80%">
+<table border="1" width="100%">
 	<tr>
 		<td>번호</td>
 		<td>제목</td>
