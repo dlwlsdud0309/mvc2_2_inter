@@ -11,7 +11,7 @@ import nb.vo.NoticeBoards;
 public class NbInsertProController implements NbController{
 
 //	HttpServletRequest httpSession;
-	//HttpServlet session;
+//	HttpServlet session;
 	//ServletRequest session;
 	
 	@Override
@@ -19,21 +19,22 @@ public class NbInsertProController implements NbController{
 		System.out.println("NbInsertProController mvc2 신호");
 		
 		String title = request.getParameter("title");
-		//String loginId = (String)httpSession.getAttribute("loginId");
-		//HttpSession session = request.getSession(false);
-//		String sendInsertProWriterId = (String)session.getAttribute("sendInsertProWriterId");
-//		String sendInsertProWriterId = (String)request.getAttribute("sendInsertProWriterId");
+//		String loginId = (String)httpSession.getAttribute("loginId");
+		//HttpSession session = session.getSession(false);
+		//String loginId = (String)session.getAttribute("loginId");
+		String loginId = request.getParameter("loginId");
+		//String sendInsertProWriterId = (String)request.getAttribute("sendInsertProWriterId");
 		//String loginId = (String)session.getAttribute("writerId");
 		//String loginId = (String)request.getAttribute("writerId");
 		
 		
 		System.out.println("InsertPro title : "+title);
-		//System.out.println("InsertPro sendInsertProWriterId : "+sendInsertProWriterId);
+		System.out.println("InsertPro loginId : "+loginId);
 		String content = request.getParameter("content");
 
 		NoticeBoards nb = new NoticeBoards();
 		nb.setTitle(title);
-//		nb.setWriter(loginId);
+		nb.setWriter(loginId);
 		//nb.setWriter(sendInsertProWriterId);
 		nb.setContent(content);
 

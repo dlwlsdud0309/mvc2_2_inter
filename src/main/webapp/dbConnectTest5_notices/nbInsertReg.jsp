@@ -31,6 +31,7 @@ System.out.println("loginIddddddd : "+loginId);
 	<div>
 		<textarea name="content" id="txtcontent" class="txtcontent" placeholder="내용을 입력하세요"></textarea>
 	</div>
+	<input type="hidden" name="loginId" value="<%=loginId %>" />
 	<input type="submit" value="insert" />
 </form>
 </body>
