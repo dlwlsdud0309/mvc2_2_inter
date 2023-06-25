@@ -20,17 +20,21 @@ public class NbInsertProController implements NbController{
 		
 		String title = request.getParameter("title");
 		//String loginId = (String)httpSession.getAttribute("loginId");
-		HttpSession session = request.getSession(true);
-		String sendInsertProWriterId = (String)session.getAttribute("sendInsertProWriterId");
+		//HttpSession session = request.getSession(false);
+//		String sendInsertProWriterId = (String)session.getAttribute("sendInsertProWriterId");
+//		String sendInsertProWriterId = (String)request.getAttribute("sendInsertProWriterId");
 		//String loginId = (String)session.getAttribute("writerId");
 		//String loginId = (String)request.getAttribute("writerId");
+		
+		
 		System.out.println("InsertPro title : "+title);
-		System.out.println("InsertPro sendInsertProWriterId : "+sendInsertProWriterId);
+		//System.out.println("InsertPro sendInsertProWriterId : "+sendInsertProWriterId);
 		String content = request.getParameter("content");
 
 		NoticeBoards nb = new NoticeBoards();
 		nb.setTitle(title);
-		nb.setWriter(sendInsertProWriterId);
+//		nb.setWriter(loginId);
+		//nb.setWriter(sendInsertProWriterId);
 		nb.setContent(content);
 
 		NoticeBoardsDao dao = new NoticeBoardsDao();

@@ -15,6 +15,7 @@ request.setCharacterEncoding("utf-8");
 <title>my jsp file</title>
 </head>
 <body>
+
 <%
 /* String title = request.getParameter("title");
 String loginId = (String)session.getAttribute("sessionId");
