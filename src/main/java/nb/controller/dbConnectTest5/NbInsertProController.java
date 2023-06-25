@@ -2,7 +2,6 @@ package nb.controller.dbConnectTest5;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import nb.controller.NbController;
 import nb.dao.NoticeBoardsDao;
 import nb.vo.NoticeBoards;
@@ -18,6 +17,8 @@ public class NbInsertProController implements NbController{
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		System.out.println("NbInsertProController mvc2 신호");
 		
+		//String num = request.getParameter("no");
+		//System.out.println("nummmmmm"+num);
 		String title = request.getParameter("title");
 //		String loginId = (String)httpSession.getAttribute("loginId");
 		//HttpSession session = session.getSession(false);
@@ -41,9 +42,13 @@ public class NbInsertProController implements NbController{
 		NoticeBoardsDao dao = new NoticeBoardsDao();
 		int resultNum = dao.insert(nb);
 		
+		//nb = dao.getNBD(num);
+		
+		//request.setAttribute("nb", nb);
+		
 		if(resultNum>0){
+			request.getRequestDispatcher("noticeboards.jsp").forward(request, response);
 			//response.sendRedirect("noticeboards.jsp");
-			request.getRequestDispatcher("noticeboardsDetail.jsp").forward(request, response);
 		}
 		
 	}

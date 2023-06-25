@@ -5,7 +5,7 @@ request.setCharacterEncoding("utf-8");
 %>
 <%
 String loginId = (String)session.getAttribute("sessionId");
-System.out.println("loginIddddddd : "+loginId);
+//System.out.println("loginIddddddd : "+loginId);
 %>
 <!DOCTYPE html>
 <html>
